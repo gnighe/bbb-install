@@ -169,7 +169,6 @@ main() {
         PROVIDED_CERTIFICATE=true
         ;;
       w)
-        SSH_PORT=$(grep Port /etc/ssh/ssh_config | grep -v \# | sed 's/[^0-9]*//g')
         if [[ -n "$SSH_PORT" && "$SSH_PORT" != "22" ]]; then
           err "Detected sshd not listening to standard port 22 -- unable to install default UFW firewall rules.  See https://docs.bigbluebutton.org/2.2/customize.html#secure-your-system--restrict-access-to-specific-ports"
         fi
